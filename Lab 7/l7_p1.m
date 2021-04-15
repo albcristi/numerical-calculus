@@ -1,0 +1,11 @@
+nodes = [1 2 3 4 5 6 7];
+values = [13 15 20 14 15 13 10];
+X = [8 9 10];
+clf;
+hold on;
+plot(nodes, values, 'o');
+[a,b] = least_square_linear(nodes, values);
+P = X*a+ones(1,length(X))*b;
+disp(P);
+fplot(@(x) a*x+b, [0,8]);
+hold of;
