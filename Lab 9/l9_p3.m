@@ -1,0 +1,1 @@
+f = @(x) (100 ./ x.^2) .* sin(10./x);res = adaptive_quadrature(1, 3, f, 10^(-4));printf("Adaptive quadrature result %f\n", res);n = [50 100];for i=1:length(n)   aprox = rep_simpson(1, 3, f, n(i));   printf("Rep.Simpson for n=%d is %f\n", n(i), aprox); endfor x = linspace(1,3,1000); plot(x, f(x));
